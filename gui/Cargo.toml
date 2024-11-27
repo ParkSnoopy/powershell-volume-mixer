@@ -1,0 +1,20 @@
+[package]
+name = "powershell-audio-gui"
+version = "0.1.1"
+edition = "2021"
+
+[profile.release]
+panic = "abort"
+strip = true
+lto   = true
+
+[dependencies]
+eframe = "0.29.1"
+egui = "0.29.1"
+powershell-audio-core = { version = "0.1.0", path = "../core" }
+
+[target."cfg(windows)".build-dependencies]
+winres = "0.1.12"
+
+[build-dependencies]
+static_vcruntime = "2.0.0"
