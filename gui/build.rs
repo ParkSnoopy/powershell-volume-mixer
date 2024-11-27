@@ -1,6 +1,8 @@
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    if cfg!(windows) {
+    
+    #[cfg(all(target_family = "windows"))]
+    {
         use winres::{
             WindowsResource,
             //VersionInfo,
